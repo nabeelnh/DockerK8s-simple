@@ -25,5 +25,5 @@ after_success:
   # Push images above to Docker Hub
   - docker push nabeelhamadal/multi-client
   - docker push nabeelhamadal/multi-api
-  - docker push nabeelhamadal/muliti-nginx
+  - docker push nabeelhamadal/mutli-nginx
   - docker push nabeelhamadal/multi-worker
