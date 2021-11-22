@@ -1,3 +1,5 @@
+---
+
 sudo: required
 services:
   - docker
@@ -17,10 +19,10 @@ after_success:
   - docker build -t nabeelhamadal/mutli-nginx ./nginx
   - docker build -t nabeelhamadal/multi-worker ./worker
 
-# Login Docker CLI
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Login Docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-# Push images above to Docker Hub
+  # Push images above to Docker Hub
   - docker push nabeelhamadal/multi-client
   - docker push nabeelhamadal/multi-api
   - docker push nabeelhamadal/muliti-nginx
