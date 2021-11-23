@@ -16,7 +16,7 @@ script:
 after_success:
   - docker build -t nabeelhamadal/multi-client ./client
   - docker build -t nabeelhamadal/multi-api ./api
-  - docker build -t nabeelhamadal/mutli-nginx ./nginx
+  - docker build -t nabeelhamadal/multi-nginx ./nginx
   - docker build -t nabeelhamadal/multi-worker ./worker
 
   # Login Docker CLI
@@ -25,7 +25,7 @@ after_success:
   # Push images above to Docker Hub
   - docker push nabeelhamadal/multi-client
   - docker push nabeelhamadal/multi-api
-  - docker push nabeelhamadal/mutli-nginx
+  - docker push nabeelhamadal/multi-nginx
   - docker push nabeelhamadal/multi-worker
 
 
