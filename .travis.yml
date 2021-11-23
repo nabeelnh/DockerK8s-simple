@@ -27,3 +27,17 @@ after_success:
   - docker push nabeelhamadal/multi-api
   - docker push nabeelhamadal/mutli-nginx
   - docker push nabeelhamadal/multi-worker
+
+
+# Deploy from Travis to Elastic Beans
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-2'
+  app: 'multi-docker'
+  env: 'MultiDocker-env'
+  bucket_name: 'elasticbeanstalk-eu-west-2-500139711733'
+  bucket_path: 'docker-multi'
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
